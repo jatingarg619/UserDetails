@@ -9,7 +9,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function Modal(props) {
  const [email, setEmail] = useState('')
-console.log(props, "modal")
 
  const handleChange = (event) => {
       setEmail(event.target.value)

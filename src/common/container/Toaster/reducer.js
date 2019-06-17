@@ -60,7 +60,6 @@ const INITIAL = {
 }
 
 export function successReducer (state = INITIAL, action) {
-  console.log(action.type, "inaction")
   switch (action.type) {
    case SUCCESS_CANCEL:
       return INITIAL;

@@ -44,7 +44,6 @@ function Toaster(props) {
            className: 'successToast notification',
            autoClose: 2200
          });
-           console.log(props, "in not logout")
         props.successCancel()
       }
       if(props.success.message !== '' && props.success.type === 'logout' ){
@@ -55,7 +54,6 @@ function Toaster(props) {
            className: 'successToast notification',
            autoClose: 2200
          });
-          console.log(props, "in logout") 
         props.successCancel()  
         window.location.href = window.location.origin
        }

@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -23,4 +22,112 @@ body {
 .FormTitle{
 	font-size: 20px;
 	color: #ffffff;
+	padding-top: 100px;
+	padding-bottom: 20px;
+}
+
+.FormContent{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgrey;
+    margin: auto;
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid; 
+}
+
+.FormInput{
+	padding: 15px;
+    margin: 10px;
+    width: 300px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.FormError{
+	font-size: 14px;
+    color: red;
+}
+
+
+/*button*/
+
+.button-primary{
+	width: 200px;
+    font-size: 16px;
+    padding: 10px;
+    background-color: green ;
+    margin: 10px;
+    color: #fff ;
+    border-radius: 2px ;
+     border: 1px solid ; 
+}
+
+
+.button-secondary{
+	width: 200px;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #ffffff;
+    margin: 10px;
+    color: black;
+    border-radius: 2px;
+     border: 1px solid; 
+}
+
+
+
+
+.BottomContainer{
+	width: 500px;
+	margin: auto;
+}
+
+
+
+.ForgotLink{
+	padding: 20px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+
+
+.Left{
+	float: left;
+}
+
+
+.Right{
+	float: right;
+}
+
+
+
+/*User*/
+
+
+.UserContainer{
+	background-color: green; 
+	height: 100vh;
+}
+
+
+.UserTitle{
+	font-size: 40px;
+	color: #ffffff;
+	padding: 40px;
+}
+
+
+.profileButton{
+	margin: 40px;
+}
+
+.logoutButton{
+	margin: 40px;
+	
 }

@@ -86,34 +86,6 @@ export function getSignUpDataReducer (state = INITIAL_STATE, action) {
   }
 }
 
-// export function getResetDataReducer (state = INITIAL_STATE, action) {
-//   switch (action.type) {
-//     case GET_SIGNUP_DATA:
-//       return {
-//         ...state,
-//         loading: true,
-//         data: [],
-//         error: false
-//       }
-//     case GET_SIGNUP_DATA_SUCCESS:
-     
-//       return {
-//         ...state,
-//         data: action.payload.response,
-//         error: false,
-//         loading: false
-//       }
-//     case GET_SIGNUP_DATA_FAILURE:
-//       return {
-//         ...state,
-//         error: true,
-//         data: [],
-//         loading: false
-//       }
-//     default:
-//       return state
-//   }
-// }
 
 
 

@@ -9,7 +9,6 @@ export function getUserAction() {
 
 
 export function logoutAction() {
-	console.log("in logoutAction")
   return {
     type: LOGOUT_SUCCESS
   }

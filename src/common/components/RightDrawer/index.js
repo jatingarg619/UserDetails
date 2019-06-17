@@ -7,11 +7,12 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import Moment from 'react-moment';
 
 
 const useStyles = makeStyles({
   list: {
-    width: 500,
+    width: 600,
   },
   fullList: {
     width: 'auto',
@@ -20,8 +21,7 @@ const useStyles = makeStyles({
 
 export default function RightDrawer(props) {
   const classes = useStyles();
-  // const [state, setState] = React.useState(props.toggle);
-  console.log(props)
+
   const toggleDrawer = (open) => event => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
@@ -36,30 +36,31 @@ export default function RightDrawer(props) {
       role="presentation"
       onClick={toggleDrawer( false)}
       onKeyDown={toggleDrawer( false)}
-    >
+    > 
+     
       <List>
-       
+          <button className="button-primary Left" onClick={props.handleReset}>Reset Password</button> 
           <ListItem button key={props.data.display_name}>
-             <ListItemText> {props.data ? props.data.display_name: null}</ListItemText>
+             <ListItemText> {Object.keys(props.data).length > 0  ? props.data.display_name: null}</ListItemText>
               
           </ListItem>
           <ListItem button key={props.data.email}>
-            <ListItemText> {props.data ? props.data.email : null}</ListItemText>
+            <ListItemText> {Object.keys(props.data).length > 0  ? props.data.email : null}</ListItemText>
               
           </ListItem>
           <ListItem button >
-            <ListItemText> Account Age: {props.data ? props.data.created_at: null}</ListItemText>
+            <ListItemText> Account Age: {Object.keys(props.data).length > 0 ?  <span fromNow>{props.data.created_at.slice(0,10)} </span>: null}</ListItemText>
               
           </ListItem>
   
       </List>
       <Divider />
-      <Button onClick={props.handleReset}>Reset Password</Button> 
+    
       <List>
           
           <ListItem button >
-            
-            <ListItemText>Security: {props.data ? props.data.updated_at : null}</ListItemText>
+         
+            <ListItemText>Last Updated: {Object.keys(props.data).length > 0  ?  <span fromNow> {props.data.updated_at.slice(0,10)} </span> : null}</ListItemText>
           </ListItem>
     
       </List>

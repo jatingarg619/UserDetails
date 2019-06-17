@@ -9,18 +9,11 @@ function UserDetails(props){
 	const [toggle, setToggle] = useState(false)
 	const [openModal, setOpenModal] = useState(false)
 
-	// useEffect(() => {
-	// 	if(localStorage.getItem)
-	// 	props.getUserAction()
-	// }, [])
-	console.log(props)
 	useEffect(() => {
 		
 			props.getUserAction()
-		
-		
-		
 	}, [])
+
 	const handleSubmit = (email, value) =>{
 		setOpenModal(value)
 		if(email){
@@ -32,19 +25,19 @@ function UserDetails(props){
 		setOpenModal(true)
 	}
 
-	const handleLogout = (event) => {
-			event.preventDefault()
+	const handleLogout = () => {
 			localStorage.clear()
 			props.logoutAction()
 	}
 
 	return(
-		  <div>
-		  	user page
-		  	<button onClick={() => {setToggle(true)}}>Show</button>
-		  	<button onClick={handleLogout}>Logout</button>
-		  	<RightDrawer open={toggle} data={props.userData} toggle={(value) => {setToggle(value)}}  handleReset={handleReset} />
-		  	<Modal openModal={openModal} handleSubmit={handleSubmit} title='Reset Password here Enter Email'/>
+		  <div className="UserContainer">
+		  	<div className="Left UserTitle">user page</div>
+		  	<button className="button-secondary Right logoutButton" onClick={handleLogout}>Logout</button>
+		  	<button className="button-secondary Right profileButton" onClick={() => {setToggle(true)}}>Profile Info</button>
+
+		  	<RightDrawer open={toggle} data={props.userData} toggle={(value) => {setToggle(value)}}  handleReset={handleReset}  />
+		  	<Modal openModal={openModal} handleSubmit={handleSubmit} title='Enter Email to Reset Password'/>
 		  </div>
 
 		)

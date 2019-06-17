@@ -5,7 +5,7 @@ import { FormSubmitAction, getPasswordAction } from '../actions'
 import {LoginComponent, ForgotPasswordComponent, SignUpComponent} from './components'
 
 function Login(props) {
-	console.log(props)
+	
 	const [activeComponent, setActiveComponent] = useState('Login')
 	const [passwordRegex, setPasswordRegex] = useState('')
 
@@ -27,7 +27,7 @@ function Login(props) {
 			props.history.push('/User')
 		}
 		if(props.passwordData && Object.keys(props.passwordData).length >0){
-			console.log(props.passwordData, "in password")
+			
 			let passwordRegex = '/^'
 			if(props.passwordData['require_number']){
 				passwordRegex += '(?=.*\d)'
@@ -50,7 +50,6 @@ function Login(props) {
 
 
 	const handleSubmit = (values) =>{
-		console.log(values)
 		props.FormSubmitAction(activeComponent, values)
 	}
 
@@ -66,10 +65,6 @@ function Login(props) {
 	
 
 	const renderComponent = () => {
-
-
-
-		console.log(activeComponent)
 		 switch(activeComponent){
 		 	 case 'Login':
 		 	 return <LoginComponent passwordRegex={passwordRegex} handleSubmit={handleSubmit}/>
@@ -94,9 +89,9 @@ function Login(props) {
 
 	 			{renderComponent()}
 	 			
-	 			<div>
-	 				<button onClick={handleToggle}>{activeComponent === 'Login' ? 'Signup' : 'Login'} </button>
-	 				{activeComponent !== 'forgotPassword' ? <button onClick={() => {setActiveComponent('forgotPassword')}}> Forgot Password</button>: null}
+	 			<div className="BottomContainer">
+	 				<button className="button-secondary Left" onClick={handleToggle}>{activeComponent === 'Login' ? 'Signup' : 'Login'} </button>
+	 				{activeComponent !== 'forgotPassword' ? <a className="ForgotLink Right" onClick={() => {setActiveComponent('forgotPassword')}}> Forgot Password?</a>: null}
 	 			</div>
 	 			
 	 		</div>
