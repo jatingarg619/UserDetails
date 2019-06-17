@@ -48,7 +48,7 @@ const SignupSchema = yup.object().shape({
     .string()
     .required('Please Enter a Confirm Password')
     .label('Confirm password')
-    .test('passwords-match', 'Passwords must match ya fool', function(value) {
+    .test('passwords-match', 'Passwords must match', function(value) {
       return this.parent.password === value;
     }),
   username: yup
