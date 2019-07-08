@@ -20,7 +20,7 @@ const getUserDataSuccess = payload => ({ type: GET_USER_DATA_SUCCESS, payload })
 
 export const getUserDataEpic = action$ => action$.pipe(
   ofType(GET_USER_DATA),
-  mergeMap(action => ajax.getJSON(`https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs`, {Authorization: `${JSON.parse(localStorage.getItem('authToken'))}` }).pipe(
+  mergeMap(action => ajax.getJSON(`${URL}/api/v2/people/me/?person_key=${JSON.parse(localStorage.getItem('key'))}`, {Authorization: `${JSON.parse(localStorage.getItem('authToken'))}` }).pipe(
     map(response => getUserDataSuccess(response)),
     catchError(error => of({
       type: GET_USER_DATA_FAILURE,
