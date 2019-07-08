@@ -155,7 +155,7 @@ function UserDetails(props){
 	}
 
 	const handleMouseOver=(i) => {
-		 console.log(i)
+		 
 		 setShowInfoWindow(i)
 	}
 
@@ -187,18 +187,7 @@ function UserDetails(props){
 		  	<div className="Left UserTitle">user page</div>
 		  	<button className="button-secondary Right logoutButton" onClick={handleLogout}>Logout</button>
 		  	<button className="button-secondary Right profileButton" onClick={() => {setToggle(true)}}>Profile Info</button>
-		  	<MyMapComponent
- 					 googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyADP5oEiu2kOKMklYVPda5Aytm-kxkrgPE&v=3.exp&libraries=geometry,drawing,places"
-  					 loadingElement={<div style={{ height: `100%` }} />}
-  					 containerElement={<div style={{ height: `400px` }} />}
- 					 mapElement={<div style={{ height: `100%` }} />}
- 					 data={data}
- 					 handleMouseOut={handleMouseOut}
- 					 handleMouseOver={handleMouseOver}
- 					 handleClick={handleClick}
- 					 showInfoWindow={showInfoWindow}
- 					
-			/>
+		  
 		  	<table className="table">
 		  		<thead>
 		  			<tr>
